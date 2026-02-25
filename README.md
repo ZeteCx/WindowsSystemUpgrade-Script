@@ -1,9 +1,10 @@
-This is a very simple script that use winget and PSWindowsUpdate. I've made to deploay in a server farm context. Note that it can still be used run in a privilaged user enviorment.
+This script utilises Winget and PSWindowsUpdate to deploy in a server farm context.
+It can be used in a privileged user environment.
 
-Since winget cannot run in system context - it would locate the .exe and would execute it. 
+Winget cannot usually run in a system context, so this script resolves that issue by locating the .exe required and executing it.
+This will silently and headlessly update windows without user intervention, and more importantly, without forcing a restart.
 
-Outside of it itll run windows update silently without any user intervention and without forcing restart on them.
+Full disclosure: AI was partly used in order to assist me in the creation of this script.
+If you would like to run this script in a server context, please use the following arguments:
 
-Full disclosure: I used some AI and some help form the internet to modify this script.
-
-If you would like to run it in server context - Run it with the following arguments: -NoProifle -ExecutionPoliciy Bypass -NonInteractive -WindowStyle Hidden 
+-NoProfile -ExecutionPoliciy Bypass -NonInteractive -WindowStyle Hidden 
