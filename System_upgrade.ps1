@@ -60,5 +60,13 @@ if ($wingetExe -and (Test-Path $wingetExe)) {
     & $wingetExe source update
 }
 
+# Upgrade all apps silently using Winget
+if ($wingetCommand) {
+    winget upgrade --all --silent --accept-package-agreements --accept-source-agreements --disable-interactivity --force
+} else {
+    Write-H
+}
+
 # Error/Success exit code
 exit $LASTEXITCODE
+
