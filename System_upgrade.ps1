@@ -61,7 +61,7 @@ if ($wingetExe -and (Test-Path $wingetExe)) {
 }
 
 # Upgrade all apps silently using Winget
-if ($wingetCommand) {
+if ($wingetExe -and (Test-Path $wingetExe) {
     winget upgrade --all --silent --accept-package-agreements --accept-source-agreements --disable-interactivity --force
 } else {
     Write-Host "No app updates found..."
@@ -69,5 +69,6 @@ if ($wingetCommand) {
 
 # Error/Success exit code
 exit $LASTEXITCODE
+
 
 
